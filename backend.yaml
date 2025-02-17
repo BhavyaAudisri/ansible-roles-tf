@@ -1,5 +1,6 @@
-- name: configuring backend server
+- name: "configuring {{ COMPONENT }} server"
   hosts: all
   become: yes
+  
   roles:
-  - backend
+  - "{{ COMPONENT }}"
