@@ -1,3 +1,4 @@
 BACKEND_HOST: backend.app-{{ ENVIRONMENT }}.somisettibhavya.life
 APP_LOCAION: /usr/share/nginx/html
 COMPONENT: frontend
+
