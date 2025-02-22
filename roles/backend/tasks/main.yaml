@@ -24,8 +24,8 @@
     tasks_from: main
 
 - name: Install dependencies
-  tags:
-  - deployment
+  # tags:
+  # - deployment
   community.general.npm:
     path: /app
   ignore_errors: true
@@ -48,13 +48,13 @@
     state: import
     name: all
     login_user: "{{ MYSQL_USER }}"
-    login_password: "{{ MYSQL_PASSWORD }}"
+    login_password: "{{ lookup('amazon.aws.aws_ssm', '/expense/mysql/mysql_root_password', decrypt=True ) }}"
     login_host: "{{ MYSQL_HOST }}"
     target: /app/schema/backend.sql
 
 - name: daemon reload and restart service
-  tags:
-  - deployment
+  # tags:
+  # - deployment
   ansible.builtin.systemd_service:
     enabled: true
     state: restarted
