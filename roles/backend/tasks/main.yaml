@@ -28,6 +28,7 @@
   # - deployment
   community.general.npm:
     path: /path
+    state: present
   ignore_errors: true
 
 - name: copy backend service
