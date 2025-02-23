@@ -16,7 +16,7 @@
   # tags: 
   # - deployment
   ansible.builtin.git:
-    url: "https://github.com/BhavyaAudisri/expense-{{ backend }}-code/blob/main/expense-{{ backend }}-v2.zip" 
+    url: "https://github.com/BhavyaAudisri/expense-{{ COMPONENT }}-code/blob/main/expense-{{ COMPONENT }}-v2.zip" 
     dest: /tmp/backend.zip
 
 
