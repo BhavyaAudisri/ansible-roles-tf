@@ -29,4 +29,3 @@
 - name: unzip backend code from git
   ansible.builtin.shell: 
     cmd: unzip /tmp/backend.zip
-    remote_src: yes
