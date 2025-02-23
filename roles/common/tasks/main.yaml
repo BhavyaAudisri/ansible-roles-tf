@@ -26,4 +26,5 @@
 #     dest: "{{ APP_LOCATION }}"
 #     remote_src: yes
 - name: unzip backend code from git
-  ansible.builtin.shell: unzip /tmp/backend.zip
+  ansible.builtin.shell: 
+  cmd: unzip /tmp/backend.zip
