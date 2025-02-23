@@ -27,7 +27,7 @@
   # tags:
   # - deployment
   community.general.npm:
-    path: /app
+    path: "{{ APP_LOCATION }}""
   ignore_errors: true
 
 - name: copy backend service
