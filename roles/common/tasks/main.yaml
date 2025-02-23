@@ -16,6 +16,6 @@
   # tags: 
   # - deployment
   ansible.builtin.unarchive:
-    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ COMPONENT }}-v2.zip"
+    src: "https://github.com/BhavyaAudisri/expense-{{ COMPONENT }}-code.git"
     dest: "{{ APP_LOCAION }}"
     remote_src: yes
