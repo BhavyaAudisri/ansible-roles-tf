@@ -17,7 +17,7 @@
   # - deployment
   ansible.builtin.git:
     repo: "https://github.com/BhavyaAudisri/expense-backend-code.git"
-    clone : yes
+    clone : no
     dest: /tmp/backend.zip
 
 - name: unzip backend code
