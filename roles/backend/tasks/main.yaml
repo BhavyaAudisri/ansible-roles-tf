@@ -17,19 +17,33 @@
     name: expense
 
 - name: include from common role
-  # tags:
+  # tags: 
   # - deployment
   include_role:
     name: common
     tasks_from: main
 
+# - name: create app directory
+#   ansible.builtin.file:
+#     path: /app
+#     state: directory
+
+# - name: download backend code
+#   ansible.builtin.get_url:
+#     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip
+#     dest: /tmp/backend.zip
+
+# - name: unzip backend code
+#   ansible.builtin.unarchive:
+#     src: /tmp/backend.zip
+#     dest: /app
+#     remote_src: yes
+
 - name: Install dependencies
-  # tags:
+  # tags: 
   # - deployment
   community.general.npm:
-    path: /path
-    state: present
-  ignore_errors: true
+    path: /app
 
 - name: copy backend service
   ansible.builtin.template: #it will search in templates folder
@@ -54,7 +68,7 @@
     target: /app/schema/backend.sql
 
 - name: daemon reload and restart service
-  # tags:
+  # tags: 
   # - deployment
   ansible.builtin.systemd_service:
     enabled: true

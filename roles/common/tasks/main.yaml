@@ -2,32 +2,20 @@
   # tags: 
   # - deployment
   ansible.builtin.file:
-    path: "{{ APP_LOCATION }}" # backend folder is /app, frontend /usr/share/nginx/html
+    path: "{{ APP_LOCAION }}" # backend folder is /app, frontend /usr/share/nginx/html
     state: absent
 
 - name: create app directory
   # tags: 
   # - deployment
   ansible.builtin.file:
-    path: "{{ APP_LOCATION }}" # backend folder is /app, frontend /usr/share/nginx/html
+    path: "{{ APP_LOCAION }}" # backend folder is /app, frontend /usr/share/nginx/html
     state: directory
 
 - name: download app code
   # tags: 
   # - deployment
-  ansible.builtin.get_url:
-   # repo: "https://github.com/BhavyaAudisri/expense-{{ COMPONENT }}-code.git"
-    url: "https://github.com/BhavyaAudisri/expense-{{ COMPONENT }}-code/blob/main/expense-{{ COMPONENT }}-v2.zip" 
-    dest : "{{ APP_LOCATION }}"
-
-# - name: unzip backend code
-#   ansible.builtin.unarchive:
-#     src: /tmp/backend.zip
-#     dest: "{{ APP_LOCATION }}"
-#     remote_src: yes
-#   ignore_errors: true
-
-- name: unzip backend code from git
-  ansible.builtin.shell: 
-    cmd: unzip /tmp/backend.zip
-  ignore_errors: true
+  ansible.builtin.unarchive:
+    src: "https://expense-builds.s3.us-east-1.amazonaws.com/expense-{{ COMPONENT }}-v2.zip"
+    dest: "{{ APP_LOCAION }}"
+    remote_src: yes
