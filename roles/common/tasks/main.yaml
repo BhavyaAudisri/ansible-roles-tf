@@ -2,14 +2,14 @@
   # tags: 
   # - deployment
   ansible.builtin.file:
-    path: "{{ APP_LOCAION }}" # backend folder is /app, frontend /usr/share/nginx/html
+    path: "{{ APP_LOCATION }}" # backend folder is /app, frontend /usr/share/nginx/html
     state: absent
 
 - name: create app directory
   # tags: 
   # - deployment
   ansible.builtin.file:
-    path: "{{ APP_LOCAION }}" # backend folder is /app, frontend /usr/share/nginx/html
+    path: "{{ APP_LOCATION }}" # backend folder is /app, frontend /usr/share/nginx/html
     state: directory
 
 - name: download app code
@@ -18,7 +18,7 @@
   ansible.builtin.get_url:
     url: "https://github.com/BhavyaAudisri/expense-backend-code/blob/main/expense-{{ COMPONENT }}-v2.zip"
     dest: /tmp/backend.zip
-    
+
 - name: unzip backend code
   ansible.builtin.unarchive:
     src: /tmp/backend.zip
