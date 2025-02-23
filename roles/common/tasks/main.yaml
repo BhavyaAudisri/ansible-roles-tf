@@ -15,8 +15,8 @@
 - name: download app code
   # tags: 
   # - deployment
-  ansible.builtin.uri:
-    url: "https://github.com/BhavyaAudisri/expense-backend-code/blob/main/expense-{{ COMPONENT }}-v2.zip"
+  ansible.builtin.git:
+    repo: "https://github.com/BhavyaAudisri/expense-backend-code.git"
     dest: /tmp/backend.zip
 
 - name: unzip backend code
