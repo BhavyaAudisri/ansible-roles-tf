@@ -18,7 +18,7 @@
   ansible.builtin.get_url:
    # repo: "https://github.com/BhavyaAudisri/expense-{{ COMPONENT }}-code.git"
     url: "https://github.com/BhavyaAudisri/expense-{{ COMPONENT }}-code/blob/main/expense-{{ COMPONENT }}-v2.zip" 
-    dest : /tmp/backend.zip
+    dest : "{{ APP_LOCATION }}"
 
 - name: unzip backend code
   ansible.builtin.unarchive:
