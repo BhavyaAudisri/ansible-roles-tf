@@ -16,9 +16,9 @@
   # tags: 
   # - deployment
   ansible.builtin.git:
-    repo: "https://github.com/BhavyaAudisri/expense-backend-code.git"
-    clone : yes
+    url: "https://github.com/BhavyaAudisri/expense-{{ backend }}-code/blob/main/expense-{{ backend }}-v2.zip" 
     dest: /tmp/backend.zip
+
 
 - name: unzip backend code
   ansible.builtin.unarchive:
