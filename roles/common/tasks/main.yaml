@@ -18,8 +18,7 @@
   ansible.builtin.git:
     repo: "https://github.com/BhavyaAudisri/expense-{{ COMPONENT }}-code.git"
     url: "https://github.com/BhavyaAudisri/expense-{{ COMPONENT }}-code/blob/main/expense-{{ COMPONENT }}-v2.zip" 
-    dest :/tmp/backend.zip
-
+    dest : "/tmp/backend.zip"
 
 - name: unzip backend code
   ansible.builtin.unarchive:
