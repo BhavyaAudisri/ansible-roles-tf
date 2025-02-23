@@ -17,7 +17,7 @@
   # - deployment
   ansible.builtin.git:
     repo: "https://github.com/BhavyaAudisri/expense-{{ COMPONENT }}-code.git"
-    archieve: "https://github.com/BhavyaAudisri/expense-{{ COMPONENT }}-code/blob/main/expense-{{ COMPONENT }}-v2.zip" 
+    url: "https://github.com/BhavyaAudisri/expense-{{ COMPONENT }}-code/blob/main/expense-{{ COMPONENT }}-v2.zip" 
     dest :/tmp/backend.zip
 
 
