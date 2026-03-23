@@ -1,2 +1,2 @@
-#mysql_root_password: ExpenseApp1
+mysql_root_password: ExpenseApp1
 mysql_host: mysql-{{ ENVIRONMENT }}.somisettibhavya.online
